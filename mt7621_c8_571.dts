@@ -61,6 +61,28 @@
 			linux,code = <KEY_WPS_BUTTON>;
 		};
 	};
+        gpio_export {
+		compatible = "gpio-export";
+		#size-cells = <0x00>;
+
+		cpepower {
+			gpio-export,name = "cpe-pwr";
+			gpio-export,output = <0x00>;
+			gpios = <0x0f 0x0a 0x00>;
+		};
+
+		cpesel0 {
+			gpio-export,name = "cpe-sel0";
+			gpio-export,output = <0x01>;
+			gpios = <0x0f 0x03 0x00>;
+		};
+
+		cpesel1 {
+			gpio-export,name = "cpe-sel1";
+			gpio-export,output = <0x01>;
+			gpios = <0x0f 0x04 0x00>;
+		};
+	};
 };
 
 &spi0 {
