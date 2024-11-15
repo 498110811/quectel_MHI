@@ -62,39 +62,27 @@
 		};
 	};
         gpio_export {
-		compatible = "gpio-export";
-		#size-cells = <0x00>;
+             compatible = "gpio-export";
+             #size-cells = <0>;
 
-		cpepower {
-			gpio-export,name = "cpe-pwr";
-			gpio-export,output = <0x00>;
-			gpios = <0x0f 0x0a 0x00>;
-		};
+            cpepower {
+                gpio-export,name = "cpepower";
+                gpio-export,output = <0>;
+                gpios = <&gpio 10 GPIO_ACTIVE_LOW>;
+           };
 
-                usb2power {
-			gpio-export,name = "usb2-pwr";
-			gpio-export,output = <0x01>;
-			gpios = <&gpio 03 GPIO_ACTIVE_HIGH>;
-		};
+           usb2power {
+               gpio-export,name = "usb2power";
+               gpio-export,output = <1>;
+               gpios = <&gpio 03 GPIO_ACTIVE_HIGH>;
+           };
 
-                usb3power {
-			gpio-export,name = "usb3-pwr";
-			gpio-export,output = <0x01>;
-			gpios = <&gpio 04 GPIO_ACTIVE_HIGH>;
-		};
-
-		cpesel0 {
-			gpio-export,name = "cpe-sel0";
-			gpio-export,output = <0x01>;
-			gpios = <0x0f 0x03 0x00>;
-		};
-
-		cpesel1 {
-			gpio-export,name = "cpe-sel1";
-			gpio-export,output = <0x01>;
-			gpios = <0x0f 0x04 0x00>;
-		};
-	};
+           usb3power {
+               gpio-export,name = "usb3power";
+               gpio-export,output = <1>;
+              gpios = <&gpio 04 GPIO_ACTIVE_HIGH>;
+           };
+      };
 };
 
 &spi0 {
