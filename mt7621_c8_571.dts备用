@@ -51,7 +51,7 @@
 
 		reset {
 			label = "reset";
-			gpios = <&gpio 4 GPIO_ACTIVE_LOW>;
+			gpios = <&gpio 18 GPIO_ACTIVE_LOW>;
 			debounce-interval = <60>;
 			linux,code = <KEY_RESTART>;
 		};
@@ -69,6 +69,18 @@
 			gpio-export,name = "cpe-pwr";
 			gpio-export,output = <0x00>;
 			gpios = <0x0f 0x0a 0x00>;
+		};
+
+                usb2power {
+			gpio-export,name = "usb2-pwr";
+			gpio-export,output = <0x01>;
+			gpios = <&gpio 03 GPIO_ACTIVE_HIGH>;
+		};
+
+                usb3power {
+			gpio-export,name = "usb3-pwr";
+			gpio-export,output = <0x01>;
+			gpios = <&gpio 04 GPIO_ACTIVE_HIGH>;
 		};
 
 		cpesel0 {
