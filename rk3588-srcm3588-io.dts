@@ -45,7 +45,7 @@
 		pinctrl-0 = <&ir_out_pin>;
 	};
 
-	pwm-fan {
+	fan: pwm-fan {
 		compatible = "pwm-fan";
 		cooling-levels = <0 72 117 162 229 255>;
 		fan-supply = <&vcc12v_dcin>;
